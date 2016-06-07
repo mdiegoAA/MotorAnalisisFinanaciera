@@ -1,0 +1,9 @@
+c:\users\mdiego\documents\visual studio 2012\Projects\wpfLDAP\wpfLDAP\bin\wpfLDAP.dll
+c:\users\mdiego\documents\visual studio 2012\Projects\wpfLDAP\wpfLDAP\bin\wpfLDAP.pdb
+c:\users\mdiego\documents\visual studio 2012\Projects\wpfLDAP\wpfLDAP\obj\Debug\wpfLDAP.csprojResolveAssemblyReference.cache
+c:\users\mdiego\documents\visual studio 2012\Projects\wpfLDAP\wpfLDAP\obj\Debug\wpfLDAP.dll
+c:\users\mdiego\documents\visual studio 2012\Projects\wpfLDAP\wpfLDAP\obj\Debug\wpfLDAP.pdb
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\wpfLDAP\bin\Datos.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\wpfLDAP\bin\Datos.pdb
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\wpfLDAP\bin\Newtonsoft.Json.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\wpfLDAP\bin\Newtonsoft.Json.xml

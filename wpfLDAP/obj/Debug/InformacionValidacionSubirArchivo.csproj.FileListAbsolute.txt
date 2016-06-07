@@ -1,0 +1,32 @@
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\wpfLDAP\bin\wpfLDAP.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\wpfLDAP\bin\wpfLDAP.pdb
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\wpfLDAP\bin\Datos.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\wpfLDAP\bin\Entidades.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\wpfLDAP\bin\Excel.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\wpfLDAP\bin\ICSharpCode.SharpZipLib.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\wpfLDAP\bin\Negocios.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\wpfLDAP\bin\Newtonsoft.Json.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\wpfLDAP\bin\Datos.pdb
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\wpfLDAP\bin\Entidades.pdb
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\wpfLDAP\bin\Negocios.pdb
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\wpfLDAP\bin\Excel.pdb
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\wpfLDAP\bin\Newtonsoft.Json.xml
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\wpfLDAP\obj\Debug\InformacionValidacionSubirArchivo.csprojResolveAssemblyReference.cache
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\wpfLDAP\obj\Debug\wpfLDAP.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\wpfLDAP\obj\Debug\wpfLDAP.pdb
+C:\Users\mdiego\Desktop\wpfLDAP\wpfLDAP\bin\wpfLDAP.dll
+C:\Users\mdiego\Desktop\wpfLDAP\wpfLDAP\bin\wpfLDAP.pdb
+C:\Users\mdiego\Desktop\wpfLDAP\wpfLDAP\bin\Datos.dll
+C:\Users\mdiego\Desktop\wpfLDAP\wpfLDAP\bin\Entidades.dll
+C:\Users\mdiego\Desktop\wpfLDAP\wpfLDAP\bin\Excel.dll
+C:\Users\mdiego\Desktop\wpfLDAP\wpfLDAP\bin\ICSharpCode.SharpZipLib.dll
+C:\Users\mdiego\Desktop\wpfLDAP\wpfLDAP\bin\Negocios.dll
+C:\Users\mdiego\Desktop\wpfLDAP\wpfLDAP\bin\Newtonsoft.Json.dll
+C:\Users\mdiego\Desktop\wpfLDAP\wpfLDAP\bin\Datos.pdb
+C:\Users\mdiego\Desktop\wpfLDAP\wpfLDAP\bin\Entidades.pdb
+C:\Users\mdiego\Desktop\wpfLDAP\wpfLDAP\bin\Negocios.pdb
+C:\Users\mdiego\Desktop\wpfLDAP\wpfLDAP\bin\Excel.pdb
+C:\Users\mdiego\Desktop\wpfLDAP\wpfLDAP\bin\Newtonsoft.Json.xml
+C:\Users\mdiego\Desktop\wpfLDAP\wpfLDAP\obj\Debug\wpfLDAP.dll
+C:\Users\mdiego\Desktop\wpfLDAP\wpfLDAP\obj\Debug\wpfLDAP.pdb
+C:\Users\mdiego\Desktop\wpfLDAP\wpfLDAP\obj\Debug\InformacionValidacionSubirArchivo.csprojResolveAssemblyReference.cache

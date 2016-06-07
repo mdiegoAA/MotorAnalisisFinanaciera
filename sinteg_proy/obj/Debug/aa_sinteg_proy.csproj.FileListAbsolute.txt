@@ -1,0 +1,9 @@
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\sinteg_proy\bin\Debug\sinteg_proy.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\sinteg_proy\bin\Debug\sinteg_proy.pdb
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\sinteg_proy\obj\Debug\sinteg_proy.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\sinteg_proy\obj\Debug\sinteg_proy.pdb
+C:\Users\mdiego\Desktop\wpfLDAP\sinteg_proy\bin\Debug\sinteg_proy.dll
+C:\Users\mdiego\Desktop\wpfLDAP\sinteg_proy\bin\Debug\sinteg_proy.pdb
+C:\Users\mdiego\Desktop\wpfLDAP\sinteg_proy\obj\Debug\aa_sinteg_proy.csprojResolveAssemblyReference.cache
+C:\Users\mdiego\Desktop\wpfLDAP\sinteg_proy\obj\Debug\sinteg_proy.dll
+C:\Users\mdiego\Desktop\wpfLDAP\sinteg_proy\obj\Debug\sinteg_proy.pdb

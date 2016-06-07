@@ -1,0 +1,33 @@
+C:\Users\mdiego\Desktop\MotorAnalisisFinanciera_Amezquita\Negocios\bin\Debug\Negocios.dll
+C:\Users\mdiego\Desktop\MotorAnalisisFinanciera_Amezquita\Negocios\bin\Debug\Negocios.pdb
+C:\Users\mdiego\Desktop\MotorAnalisisFinanciera_Amezquita\Negocios\bin\Debug\Datos.dll
+C:\Users\mdiego\Desktop\MotorAnalisisFinanciera_Amezquita\Negocios\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mdiego\Desktop\MotorAnalisisFinanciera_Amezquita\Negocios\bin\Debug\Datos.pdb
+C:\Users\mdiego\Desktop\MotorAnalisisFinanciera_Amezquita\Negocios\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mdiego\Desktop\MotorAnalisisFinanciera_Amezquita\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
+C:\Users\mdiego\Desktop\MotorAnalisisFinanciera_Amezquita\Negocios\obj\Debug\Negocios.dll
+C:\Users\mdiego\Desktop\MotorAnalisisFinanciera_Amezquita\Negocios\obj\Debug\Negocios.pdb
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Negocios\bin\Debug\Negocios.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Negocios\bin\Debug\Negocios.pdb
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Negocios\bin\Debug\Datos.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Negocios\bin\Debug\Excel.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Negocios\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Negocios\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Negocios\bin\Debug\Datos.pdb
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Negocios\bin\Debug\Excel.pdb
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Negocios\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Negocios\obj\Debug\Negocios.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Negocios\obj\Debug\Negocios.pdb
+C:\Users\mdiego\Desktop\wpfLDAP\Negocios\bin\Debug\Negocios.dll
+C:\Users\mdiego\Desktop\wpfLDAP\Negocios\bin\Debug\Negocios.pdb
+C:\Users\mdiego\Desktop\wpfLDAP\Negocios\bin\Debug\Datos.dll
+C:\Users\mdiego\Desktop\wpfLDAP\Negocios\bin\Debug\Excel.dll
+C:\Users\mdiego\Desktop\wpfLDAP\Negocios\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\mdiego\Desktop\wpfLDAP\Negocios\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mdiego\Desktop\wpfLDAP\Negocios\bin\Debug\Datos.pdb
+C:\Users\mdiego\Desktop\wpfLDAP\Negocios\bin\Debug\Excel.pdb
+C:\Users\mdiego\Desktop\wpfLDAP\Negocios\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mdiego\Desktop\wpfLDAP\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
+C:\Users\mdiego\Desktop\wpfLDAP\Negocios\obj\Debug\Negocios.dll
+C:\Users\mdiego\Desktop\wpfLDAP\Negocios\obj\Debug\Negocios.pdb

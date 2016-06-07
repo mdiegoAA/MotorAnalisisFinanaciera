@@ -1,0 +1,10 @@
+nombreCuentas
+tbodyResult
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    ...
+  </div>
+</nav>
+.navbar-panel
+.nav > li > a:focus
+#337ab7

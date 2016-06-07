@@ -1,0 +1,23 @@
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\MotorAnalisisFinanciera_Amezquita\Entidades\bin\Debug\Entidades.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\MotorAnalisisFinanciera_Amezquita\Entidades\bin\Debug\Entidades.pdb
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\MotorAnalisisFinanciera_Amezquita\Entidades\obj\Debug\Entidades.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\MotorAnalisisFinanciera_Amezquita\Entidades\obj\Debug\Entidades.pdb
+C:\Users\mdiego\Desktop\MotorAnalisisFinanciera_Amezquita\Entidades\bin\Debug\Entidades.dll
+C:\Users\mdiego\Desktop\MotorAnalisisFinanciera_Amezquita\Entidades\bin\Debug\Entidades.pdb
+C:\Users\mdiego\Desktop\MotorAnalisisFinanciera_Amezquita\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+C:\Users\mdiego\Desktop\MotorAnalisisFinanciera_Amezquita\Entidades\obj\Debug\Entidades.dll
+C:\Users\mdiego\Desktop\MotorAnalisisFinanciera_Amezquita\Entidades\obj\Debug\Entidades.pdb
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Entidades\bin\Debug\Entidades.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Entidades\bin\Debug\Entidades.pdb
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Entidades\bin\Debug\Excel.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Entidades\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Entidades\bin\Debug\Excel.pdb
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Entidades\obj\Debug\Entidades.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Entidades\obj\Debug\Entidades.pdb
+C:\Users\mdiego\Desktop\wpfLDAP\Entidades\bin\Debug\Entidades.dll
+C:\Users\mdiego\Desktop\wpfLDAP\Entidades\bin\Debug\Entidades.pdb
+C:\Users\mdiego\Desktop\wpfLDAP\Entidades\bin\Debug\Excel.dll
+C:\Users\mdiego\Desktop\wpfLDAP\Entidades\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\mdiego\Desktop\wpfLDAP\Entidades\bin\Debug\Excel.pdb
+C:\Users\mdiego\Desktop\wpfLDAP\Entidades\obj\Debug\Entidades.dll
+C:\Users\mdiego\Desktop\wpfLDAP\Entidades\obj\Debug\Entidades.pdb

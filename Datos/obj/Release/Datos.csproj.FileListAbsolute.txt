@@ -1,0 +1,12 @@
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Datos\bin\Release\Datos.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Datos\bin\Release\Datos.pdb
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Datos\bin\Release\Entidades.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Datos\bin\Release\Excel.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Datos\bin\Release\ICSharpCode.SharpZipLib.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Datos\bin\Release\Newtonsoft.Json.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Datos\bin\Release\Entidades.pdb
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Datos\bin\Release\Excel.pdb
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Datos\bin\Release\Newtonsoft.Json.xml
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Datos\obj\Release\Datos.csprojResolveAssemblyReference.cache
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Datos\obj\Release\Datos.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Datos\obj\Release\Datos.pdb

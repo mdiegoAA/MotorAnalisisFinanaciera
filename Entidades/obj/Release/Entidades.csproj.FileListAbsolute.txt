@@ -1,0 +1,8 @@
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Entidades\bin\Release\Entidades.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Entidades\bin\Release\Entidades.pdb
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Entidades\bin\Release\Excel.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Entidades\bin\Release\ICSharpCode.SharpZipLib.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Entidades\bin\Release\Excel.pdb
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Entidades\obj\Release\Entidades.csprojResolveAssemblyReference.cache
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Entidades\obj\Release\Entidades.dll
+C:\Users\mdiego\Documents\Visual Studio 2012\Projects\wpfLDAP\Entidades\obj\Release\Entidades.pdb
