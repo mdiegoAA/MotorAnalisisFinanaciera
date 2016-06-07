@@ -1,0 +1,55 @@
+CREATE TABLE [dbo].[Amezquita_MAIF_estadoArchivo](
+	[IdEstado] [int] NOT NULL,
+	[nombreEstado] [varchar](100) NULL,
+	[descripcionEstado] [varchar](100) NULL,
+	PRIMARY KEY CLUSTERED 
+	(
+		[IdEstado] ASC
+	)
+)
+CREATE TABLE [dbo].[Amezquita_MAIF_Ecuaciones](
+	[IdEcuacion] [int] IDENTITY(1,1) NOT NULL,
+	[idCliente] [int] NOT NULL,
+	[idCentroCosto] [int] NOT NULL,
+	[Ecuacion] [varchar](max) NOT NULL,
+	[descripcionEcuacion] [varchar](100) NULL,
+	[query] [varchar](max) NULL,
+PRIMARY KEY CLUSTERED 
+	(
+		[IdEcuacion] ASC
+	)
+)
+CREATE TABLE [dbo].[Amezquita_MAIF_CUENTASxCLIENTE](
+	[idCliente] [int] NOT NULL,
+	[idCentroCosto] [int] NOT NULL,
+	[cuenta] [bigint] NULL,
+	[nombreCuenta] [varchar](max) NULL
+)
+CREATE TABLE [dbo].[Amezquita_MAIF_CentroCostos](
+	[idCentroCosto] [int] IDENTITY(1,1) NOT NULL,
+	[idCliente] [int] NOT NULL,
+	[grupoCentroCosto] [nvarchar](255) NOT NULL,
+	[nombreCentroCosto] [varchar](100) NOT NULL,
+	[descripcionCentroCosto] [varchar](max) NULL,
+	PRIMARY KEY CLUSTERED 
+	(
+		[idCentroCosto] ASC
+	)
+)
+CREATE TABLE [dbo].[Amezquita_MAIF_Archivo](
+	[IdArchivo] [int] IDENTITY(1,1) NOT NULL,
+	[fechaArchivo] [varchar](250) NOT NULL,
+	[centroCosto] [int] NOT NULL,
+	[idEstado] [int] NOT NULL,
+	[idCliente] [int] NOT NULL,
+	PRIMARY KEY CLUSTERED 
+	(
+		[IdArchivo] ASC
+	)
+)
+CREATE TABLE [dbo].[Amequita_MAIF_InformacionCuenta_ValorCuenta_IDArchivo](
+	[idArchivo] [int] NOT NULL,
+	[cuenta] [int] NOT NULL,
+	[valorCuenta] [varchar](100) NOT NULL
+)
+
