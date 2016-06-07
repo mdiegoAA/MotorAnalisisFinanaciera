@@ -1,0 +1,590 @@
+create procedure [dbo].[SP_Amezquita_ActualizarEstadoArchivo]
+(
+		
+		@idArchivo int
+	)
+	as
+	
+	update Amezquita_MAIF_Archivo
+	set idEstado = 2
+	where IdArchivo = @idArchivo
+---------------------------------------------------------------------------
+ create procedure [dbo].[SP_Amezquita_AgregarAmezquita_MAIF_CentroCostos]
+   (
+	@idCliente int ,
+	@grupoCentroCosto nvarchar(255),
+	@nombreCentroCosto varchar(100),
+	@descripcionCentroCosto varchar(max)
+   
+   )   
+   as
+   
+ -- declare @idcentroCostoMax int  
+   insert into Amezquita_MAIF_CentroCostos(idCliente,grupoCentroCosto,nombreCentroCosto,descripcionCentroCosto)values(@idCliente,@grupoCentroCosto,@nombreCentroCosto,@descripcionCentroCosto); 
+
+---------------------------------------------------------------------------
+create procedure [dbo].[SP_Amezquita_BuscarIdArchivoxCentroCosto_Feche]
+(
+	
+	@idCliente int ,
+	@centroCosto int,
+	@fechaInicio varchar(100),
+	@fechaFinal varchar(100)
+
+)
+
+as
+
+select IdArchivo , fechaArchivo
+from Amezquita_MAIF_Archivo
+where idEstado=2
+and fechaArchivo between @fechaInicio and @fechaFinal
+and idCliente = @idCliente
+and centroCosto = @centroCosto
+order by fechaArchivo
+-----------------------------------------------------------------------------
+create procedure [dbo].[SP_Amezquita_EliminarInformacionPlaunicoCuentaXidArchivo]
+(
+	@idArchivo int	
+	)
+	as
+	delete  from Amequita_MAIF_InformacionCuenta_ValorCuenta_IDArchivo where idArchivo = @idArchivo
+------------------------------------------------------------------------------
+create procedure [dbo].[sp_amezquita_GuardarEcuacion](
+	
+	@idCliente int,
+	@idCentroCosto int,
+	@ecuacion varchar(max),
+	@descripcionEcuacion varchar(max),
+	@query varchar(max)
+
+
+)
+as 
+begin 
+insert into Amezquita_MAIF_Ecuaciones (idCliente,idCentroCosto,Ecuacion,descripcionEcuacion ,query)values(@idCliente , @idCentroCosto , @ecuacion ,@descripcionEcuacion , @query );
+
+end
+-------------------------------------------------------------------------------
+create procedure [dbo].[SP_Amezquita_GuardarInformacionArchivo](
+	@idArchivo int,
+	@CodigoPlanUnicoCuenta int,
+	@valorPlanUnicoCuenta varchar(100)
+	
+	 )
+as
+
+	insert into Amequita_MAIF_InformacionCuenta_ValorCuenta_IDArchivo (idArchivo,cuenta,valorCuenta)values(@idArchivo,@CodigoPlanUnicoCuenta,@valorPlanUnicoCuenta)
+-------------------------------------------------------------------------------
+create procedure [dbo].[SP_Amezquita_ListadoGraficaPIE](
+
+@IdArchivo int 
+
+)
+as 
+begin 
+
+select   v.cuenta  , c.nombreCuenta , v.valorCuenta
+from Amezquita_MAIF_Archivo as a , Amezquita_MAIF_CUENTASxCLIENTE as c , Amequita_MAIF_InformacionCuenta_ValorCuenta_IDArchivo as v
+where  a.idCliente = c.idCliente
+and a.centroCosto = c.idCentroCosto
+and v.cuenta = c.cuenta
+and a.IdArchivo = v.idArchivo
+and a.IdArchivo = @IdArchivo
+order by c.cuenta
+END
+---------------------------------------------------------------------------------
+create procedure [dbo].[SP_Amezquita_MAIF_GuardarInformacionArchivo_idEstadoCreado](
+	
+	@fechaArchivo varchar(100),
+	@idCentroCosto int,
+	@idCliente int 
+	
+	)
+	as
+	
+	insert into Amezquita_MAIF_Archivo(fechaArchivo,centroCosto,idEstado,idCliente)
+	values (@fechaArchivo,@idCentroCosto,1,@idCliente)
+----------------------------------------------------------------------------------
+ create procedure  [dbo].[SP_Amezquita_MAIF_Obtener_CentroCostos_Cliente]
+   (
+		@idCliente int ,
+		@grupoCentroCosto varchar(max)
+   )
+   as
+   select idCentroCosto , nombreCentroCosto
+   from Amezquita_MAIF_CentroCostos
+   where idCliente = @idCliente
+   and grupoCentroCosto = @grupoCentroCosto
+-----------------------------------------------------------------------------------
+create procedure [dbo].[SP_Amezquita_MAIF_SeleccionarInformacionArchivo_idEstadoCreado]
+as
+select 	MAX(archivo.IdArchivo) as IdArchivo  from Amezquita_MAIF_Archivo as archivo
+-----------------------------------------------------------------------------------
+ create procedure  [dbo].[SP_Amezquita_MAIF_Obtener_CentroCostos_Cliente]
+   (
+		@idCliente int ,
+		@grupoCentroCosto varchar(max)
+   )
+   as
+   select idCentroCosto , nombreCentroCosto
+   from Amezquita_MAIF_CentroCostos
+   where idCliente = @idCliente
+   and grupoCentroCosto = @grupoCentroCosto
+-----------------------------------------------------------------------------------
+create procedure [dbo].[SP_Amezquita_MAIF_SeleccionarInformacionArchivo_idEstadoCreado]
+as
+select 	MAX(archivo.IdArchivo) as IdArchivo  from Amezquita_MAIF_Archivo as archivo
+-----------------------------------------------------------------------------------	
+create procedure [dbo].[SP_AMEZQUITA_MAIF_TraerInformacionArchivoeCUACIONES]
+(
+
+ @IdCentroCosto int,
+ @fechaInicial varchar(100),
+ @fechaFinal varchar(100)
+	
+
+)
+
+AS
+
+select archivo.IdArchivo,archivo.fechaArchivo , cc.nombreCentroCosto
+from Amezquita_MAIF_Archivo archivo , Amezquita_MAIF_CentroCostos cc
+where cc.idCentroCosto = archivo.centroCosto
+and archivo.fechaArchivo  between @fechaInicial and @fechaFinal
+and idEstado = 2
+and idCentroCosto = @idCentroCosto
+order by fechaArchivo
+-----------------------------------------------------------------------------------
+create procedure [dbo].[SP_Amezquita_MAIF_validarArchivoXfecha_centro_Costo](
+	@fechaArchivo varchar(100),
+	@idCentroCosto int,
+	@idCliente int 
+)
+
+as
+
+declare @idArchivo int;
+
+set @idArchivo = (
+select archivo.IdArchivo 
+from  Amezquita_MAIF_Archivo as archivo
+where archivo.fechaArchivo = @fechaArchivo
+and  archivo.centroCosto = @idCentroCosto
+and  archivo.idEstado = 2
+and archivo.idCliente = @idCliente )
+
+if (@idArchivo is null  )
+
+begin 
+set @idArchivo = -1
+end
+select @idArchivo as idArchivo	
+-----------------------------------------------------------------------------------
+create procedure [dbo].[SP_Amezquita_obtenerClientesXgrupo](
+	
+	@Name_Grupo varchar(100)
+
+)
+
+as
+
+
+SELECT datas.tp_ID as ID,  
+  datas.nvarchar5 AS CLIENTE,
+  datas.nvarchar3 AS NOMBREPROYECTO ,
+  datas.nvarchar6 AS AÑO
+  FROM [WSS_Content_Sinteg].[dbo].[AllUserData] as datas  ,
+  [WSS_Content_Sinteg].[dbo].[UserInfo] as userInfo ,
+  [WSS_Content_Sinteg].[dbo].[UserInfo] as userInfos   
+  WHERE datas.nvarchar5 = @Name_Grupo
+  and userInfos.tp_ID = datas.int2
+  and  userInfo.tp_ID = datas.int1
+  ORDER BY ID asc
+-----------------------------------------------------------------------------------
+create procedure [dbo].[sp_amezquita_obtenerCuentas]
+(
+	@idcentrocosto int
+
+
+)
+as
+
+
+select DISTINCT  c.cuenta , cl.nombreCuenta  from Amequita_MAIF_InformacionCuenta_ValorCuenta_IDArchivo c ,Amezquita_MAIF_CUENTASxCLIENTE cl
+where c.cuenta  in ( select DISTINCT  cuenta from Amezquita_MAIF_CUENTASxCLIENTE
+where idCentroCosto = @idcentrocosto)
+and c.cuenta = cl.cuenta
+and cl.idCentroCosto = @idcentrocosto
+
+order by cuenta
+-----------------------------------------------------------------------------------
+create procedure [dbo].[SP_Amezquita_ObtenerGruposUsuarioXID]
+(
+	@IdUsuario int 
+)
+as
+ SELECT distinct
+  datas.nvarchar5 AS CLIENTE  
+  FROM [WSS_Content_Sinteg].[dbo].[AllUserData] as datas  ,
+  [WSS_Content_Sinteg].[dbo].[UserInfo] as userInfo ,
+  [WSS_Content_Sinteg].[dbo].[UserInfo] as userInfos  
+   
+  WHERE nvarchar8 in (  
+	select distinct  g.Title
+  from Groups g
+  where g.ID in (select GroupId from GroupMembership 
+  where MemberId = @IdUsuario)  
+  )
+  and userInfos.tp_ID = datas.int2
+  and  userInfo.tp_ID = datas.int1
+  ORDER BY datas.nvarchar5 asc
+-----------------------------------------------------------------------------------
+create procedure [dbo].[SP_AMEZQUITA_ObtenerId_Nombre_CentroCostoAgregado]
+ as
+ select idCentroCosto , nombreCentroCosto  from Amezquita_MAIF_CentroCostos 
+  WHERE idCentroCosto = (SELECT MAX(idCentroCosto)FROM Amezquita_MAIF_CentroCostos)
+-----------------------------------------------------------------------------------
+create procedure [dbo].[sp_amezquita_ObtenerInformacionCuenta]
+(
+	@idCentroCosto int,
+	@idarchivo varchar(max) 
+
+)
+
+as
+
+select   valorCuenta  as ejemplo , archivo.fechaArchivo AS fechaArchivo , cuenta as cuenta
+from Amequita_MAIF_InformacionCuenta_ValorCuenta_IDArchivo as cuenta ,
+ Amezquita_MAIF_Archivo as archivo
+
+where cuenta.cuenta  in ( select distinct cuenta from Amezquita_MAIF_CUENTASxCLIENTE
+where idCentroCosto = @idCentroCosto
+and cuenta.idArchivo in (@idarchivo))
+and cuenta.idArchivo = archivo.IdArchivo
+
+order by cuenta,ejemplo
+-----------------------------------------------------------------------------------
+create procedure [dbo].[sp_amezquita_ObtenerInformacionCuenta]
+(
+	@idCentroCosto int,
+	@idarchivo varchar(max) 
+
+)
+
+as
+
+select   valorCuenta  as ejemplo , archivo.fechaArchivo AS fechaArchivo , cuenta as cuenta
+from Amequita_MAIF_InformacionCuenta_ValorCuenta_IDArchivo as cuenta ,
+ Amezquita_MAIF_Archivo as archivo
+
+where cuenta.cuenta  in ( select distinct cuenta from Amezquita_MAIF_CUENTASxCLIENTE
+where idCentroCosto = @idCentroCosto
+and cuenta.idArchivo in (@idarchivo))
+and cuenta.idArchivo = archivo.IdArchivo
+
+order by cuenta,ejemplo
+-----------------------------------------------------------------------------------
+create procedure [dbo].[sp_amezquita_ObtenerInformacionCuentaTrimestral]
+(
+	@idCentroCosto int,
+	@idarchivo varchar(max) 
+
+)
+
+as
+
+select   valorCuenta  as ejemplo , archivo.fechaArchivo AS fechaArchivo , cuenta as cuenta
+from Amequita_MAIF_InformacionCuenta_ValorCuenta_IDArchivo as cuenta ,
+ Amezquita_MAIF_Archivo as archivo
+
+where cuenta.cuenta  in ( select distinct cuenta from Amezquita_MAIF_CUENTASxCLIENTE
+where idCentroCosto = @idCentroCosto
+and cuenta.idArchivo in (@idarchivo))
+and cuenta.idArchivo = archivo.IdArchivo
+and MONTH(archivo.fechaArchivo) in(12,3,6,9)
+
+order by cuenta,ejemplo
+-----------------------------------------------------------------------------------
+create procedure [dbo].[SP_Amezquita_ObtenerNombreUusarioXid](	
+	@usuario int
+)
+as
+select tp_Title as nombreUsuario from UserInfo
+where tp_ID = @usuario
+-----------------------------------------------------------------------------------
+create procedure [dbo].[SP_AMEZQUITA_registrarcuentaNoRegistrada](
+	
+	  @Cuenta int,
+	  @nombreCuenta varchar(100),
+	  @IdCliente int,
+	  @centroCosto int
+	
+  
+  )
+  as
+  
+  insert into Amezquita_MAIF_CUENTASxCLIENTE (idCliente , idCentroCosto , cuenta , nombreCuenta)values(@IdCliente,@centroCosto,@Cuenta,@nombreCuenta)
+-----------------------------------------------------------------------------------
+create procedure [dbo].[sp_amezquita_TraerInformacionEcuacionXIdCliente](
+
+	@idCliente int 
+
+)
+as
+begin 
+select Ecuacion , descripcionEcuacion ,query
+from Amezquita_MAIF_Ecuaciones
+where idCliente = @idCliente
+end
+-----------------------------------------------------------------------------------
+ create procedure [dbo].[SP_AmezquitaAgregarPlanUnicoCuentaXcentroCosto]
+  @idCliente int,
+  @idCentroCosto int,
+  @cuenta bigint,
+  @nombreCuenta varchar(200)
+  
+ as 
+ begin
+  
+  insert into Amezquita_MAIF_CUENTASxCLIENTE (idCliente,idCentroCosto,cuenta,nombreCuenta)values(@idCliente,@idCentroCosto,@cuenta,@nombreCuenta)
+  end
+-----------------------------------------------------------------------------------
+create procedure [dbo].[sp_AmezquitaTraer_Nombre_Proyecto_añoXid_Grupo] (
+
+	@id int,
+	@grupo varchar(100)
+
+)
+
+as
+
+SELECT
+
+ 
+ 
+  datas.nvarchar5 AS CLIENTE,
+  datas.nvarchar3 AS NOMBREPROYECTO ,
+  datas.nvarchar6 AS AÑO  
+  FROM [WSS_Content_Sinteg].[dbo].[AllUserData] as datas 
+  where
+   datas.tp_ID=@id
+   AND nvarchar8 = @grupo
+-----------------------------------------------------------------------------------
+create procedure [dbo].[SP_AmezquitaTraer_tp_IDX_tp_Login]
+(
+	@tp_Login varchar(100)
+
+)
+as
+
+select tp_ID
+from  UserInfo
+WHERE tp_Login = @tp_Login
+-----------------------------------------------------------------------------------
+create procedure [dbo].[sp_AmezquitaTraerArchivosVarianza](
+	
+	@idCliente int ,
+	@idCentroCosto int,
+	@fechaInicial varchar(20),
+	@fechaFinal varchar(20)
+)
+as
+begin 
+select idArchivo, fechaArchivo from Amezquita_MAIF_Archivo
+where centroCosto = @idCentroCosto
+and idCliente = @idCliente
+and idEstado = 2
+and fechaArchivo between @fechaInicial  and  @fechaFinal
+order by fechaArchivo
+end
+-----------------------------------------------------------------------------------
+create procedure [dbo].[sp_AmezquitaTraerArchivosVarianzaTrimestral](
+	
+	@idCliente int ,
+	@idCentroCosto int,
+	@fechaInicial varchar(20),
+	@fechaFinal varchar(20)
+)
+as
+begin 
+select idArchivo, fechaArchivo from Amezquita_MAIF_Archivo
+where centroCosto = @idCentroCosto
+and idCliente = @idCliente
+and idEstado = 2
+and fechaArchivo between @fechaInicial  and  @fechaFinal
+and MONTH(fechaArchivo) in(12,3,6,9)
+order by fechaArchivo
+end
+-----------------------------------------------------------------------------------
+create procedure [dbo].[sp_AmezquitaTraerFechaAnual](
+	
+	@idCliente int ,
+	@idCentroCosto int,
+	@fechaInicial varchar(20),
+	@fechaFinal varchar(20)
+)
+as 
+begin
+select fechaArchivo from Amezquita_MAIF_Archivo
+
+where idEstado = 2
+and idCliente = @idCliente
+and centroCosto = @idCentroCosto
+and fechaArchivo between @fechaInicial  and  @fechaFinal
+and MONTH(fechaArchivo) in(12)
+order by fechaArchivo asc
+end
+-----------------------------------------------------------------------------------
+create procedure [dbo].[sp_AmezquitaTraerFechaArchivosVarianza](
+	
+	@idCliente int ,
+	@idCentroCosto int,
+	@fechaInicial varchar(20),
+	@fechaFinal varchar(20)
+)
+as
+begin 
+select  fechaArchivo from Amezquita_MAIF_Archivo
+where centroCosto = @idCentroCosto
+and idCliente = @idCliente
+and idEstado = 2
+and fechaArchivo between @fechaInicial  and  @fechaFinal
+order by fechaArchivo
+end
+-----------------------------------------------------------------------------------
+create procedure [dbo].[sp_AmezquitaTraerFechaArchivosVarianzaTrimestral]
+(
+	
+	@idCliente int ,
+	@idCentroCosto int,
+	@fechaInicial varchar(20),
+	@fechaFinal varchar(20)
+)
+as
+begin 
+select  fechaArchivo from Amezquita_MAIF_Archivo
+where centroCosto = @idCentroCosto
+and idCliente = @idCliente
+and idEstado = 2
+and MONTH(fechaArchivo) in(12,3,6,9)
+and fechaArchivo between @fechaInicial  and  @fechaFinal
+order by fechaArchivo
+end
+-----------------------------------------------------------------------------------
+create procedure [dbo].[sp_AmezquitaTraerFechaSemestral](
+	
+	@idCliente int ,
+	@idCentroCosto int,
+	@fechaInicial varchar(20),
+	@fechaFinal varchar(20)
+)
+as 
+begin
+select fechaArchivo from Amezquita_MAIF_Archivo
+
+where idEstado = 2
+and idCliente = @idCliente
+and centroCosto = @idCentroCosto
+and fechaArchivo between @fechaInicial  and  @fechaFinal
+and MONTH(fechaArchivo) in(12,6)
+order by fechaArchivo asc
+end
+-----------------------------------------------------------------------------------
+create procedure [dbo].[sp_AmezquitaTraerFechaTrimestral](
+	
+	@idCliente int ,
+	@idCentroCosto int,
+	@fechaInicial varchar(20),
+	@fechaFinal varchar(20)
+)
+as 
+begin
+select fechaArchivo from Amezquita_MAIF_Archivo
+
+where idEstado = 2
+and idCliente = @idCliente
+and centroCosto = @idCentroCosto
+and fechaArchivo between @fechaInicial  and  @fechaFinal
+and MONTH(fechaArchivo) in(12,3,6,9)
+order by fechaArchivo asc
+end
+-----------------------------------------------------------------------------------
+create procedure [dbo].[SP_AmezquitaTraerNombreCuentaXcuenta]
+	@cuenta bigint ,
+	@idCliente int,
+	@idCentroCosto int
+	as 
+	
+declare @nombreCuenta varchar(max);
+
+
+set @nombreCuenta = (
+SELECT TOP 1 CL.nombreCuenta FROM Amezquita_MAIF_CUENTASxCLIENTE AS CL
+WHERE CL.cuenta = @cuenta
+and cl.idCliente = @idCliente
+and cl.idCentroCosto = @idCentroCosto )
+if @nombreCuenta is null
+begin
+set @nombreCuenta = 'Cuenta no registrada';
+select @nombreCuenta as nombreCuenta
+end
+else
+begin
+select @nombreCuenta as nombreCuenta
+end
+-----------------------------------------------------------------------------------
+create procedure [dbo].[sp_AmezquitaTraerVariacionAnual](
+	
+	@idCliente int ,
+	@idCentroCosto int,
+	@fechaInicial varchar(20),
+	@fechaFinal varchar(20)
+)
+as
+begin 
+select idArchivo, fechaArchivo from Amezquita_MAIF_Archivo
+where centroCosto = @idCentroCosto
+and idCliente = @idCliente
+and idEstado = 2
+and fechaArchivo between @fechaInicial  and  @fechaFinal
+and MONTH(fechaArchivo) in(12)
+order by fechaArchivo
+end
+-----------------------------------------------------------------------------------
+create procedure [dbo].[sp_AmezquitaTraerVariacionSemestral](
+	
+	@idCliente int ,
+	@idCentroCosto int,
+	@fechaInicial varchar(20),
+	@fechaFinal varchar(20)
+)
+as
+begin 
+select idArchivo, fechaArchivo from Amezquita_MAIF_Archivo
+where centroCosto = @idCentroCosto
+and idCliente = @idCliente
+and idEstado = 2
+and fechaArchivo between @fechaInicial  and  @fechaFinal
+and MONTH(fechaArchivo) in(12,6)
+order by fechaArchivo
+end
+-----------------------------------------------------------------------------------
+create procedure [dbo].[sp_AmezquitaTraerVariacionTrimestral](
+	
+	@idCliente int ,
+	@idCentroCosto int,
+	@fechaInicial varchar(20),
+	@fechaFinal varchar(20)
+)
+as
+begin 
+select idArchivo, fechaArchivo from Amezquita_MAIF_Archivo
+where centroCosto = @idCentroCosto
+and idCliente = @idCliente
+and idEstado = 2
+and fechaArchivo between @fechaInicial  and  @fechaFinal
+and MONTH(fechaArchivo) in(12,3,6,9)
+order by fechaArchivo
+end
+
