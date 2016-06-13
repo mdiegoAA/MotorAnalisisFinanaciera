@@ -491,7 +491,7 @@
                                                    <select class="form-control" id="Periodo"> 
                                                         <option value="M" selected="selected">Mensual</option>
                                                         <option value="T">Trimestral</option>
-                                                        <option value ="S">Semestral</option> 
+                                                        <option value="S">Semestral</option> 
                                                         <option value="A">Anual</option>                                                                                                              
                                                     </select>                                                                            
                                              </div>       

@@ -985,6 +985,7 @@ namespace Datos
 
       }
 
+     
       public string varicionSemestral(string fechaInicialBusqueda, string fechaFinalBusqueda, int idClientes, int idCentroCosto, string RangoCuentaInicial, string RangoCuentaFinal)
       {
 

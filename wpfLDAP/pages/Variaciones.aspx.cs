@@ -215,8 +215,8 @@ namespace MotorAnalisisFianaciera_Amezquita.pages
 
             try
             {
-
-                return planUnicoCuenta.varicionMesSemestral(fechaInicialBusqueda, fechaFinalBusqueda, idClientes, idCentroCosto);
+                string rSult =planUnicoCuenta.varicionMesSemestral(fechaInicialBusqueda, fechaFinalBusqueda, idClientes, idCentroCosto);
+                return rSult;
 
 
             }

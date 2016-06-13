@@ -31,3 +31,15 @@ C:\Users\mdiego\Desktop\wpfLDAP\Negocios\bin\Debug\Newtonsoft.Json.xml
 C:\Users\mdiego\Desktop\wpfLDAP\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
 C:\Users\mdiego\Desktop\wpfLDAP\Negocios\obj\Debug\Negocios.dll
 C:\Users\mdiego\Desktop\wpfLDAP\Negocios\obj\Debug\Negocios.pdb
+D:\Reporsitorio\MotorAnalisisFinanciera\MotorAnalisisFinanaciera\Negocios\bin\Debug\Negocios.dll
+D:\Reporsitorio\MotorAnalisisFinanciera\MotorAnalisisFinanaciera\Negocios\bin\Debug\Negocios.pdb
+D:\Reporsitorio\MotorAnalisisFinanciera\MotorAnalisisFinanaciera\Negocios\bin\Debug\Datos.dll
+D:\Reporsitorio\MotorAnalisisFinanciera\MotorAnalisisFinanaciera\Negocios\bin\Debug\Excel.dll
+D:\Reporsitorio\MotorAnalisisFinanciera\MotorAnalisisFinanaciera\Negocios\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\Reporsitorio\MotorAnalisisFinanciera\MotorAnalisisFinanaciera\Negocios\bin\Debug\Newtonsoft.Json.dll
+D:\Reporsitorio\MotorAnalisisFinanciera\MotorAnalisisFinanaciera\Negocios\bin\Debug\Datos.pdb
+D:\Reporsitorio\MotorAnalisisFinanciera\MotorAnalisisFinanaciera\Negocios\bin\Debug\Excel.pdb
+D:\Reporsitorio\MotorAnalisisFinanciera\MotorAnalisisFinanaciera\Negocios\bin\Debug\Newtonsoft.Json.xml
+D:\Reporsitorio\MotorAnalisisFinanciera\MotorAnalisisFinanaciera\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
+D:\Reporsitorio\MotorAnalisisFinanciera\MotorAnalisisFinanaciera\Negocios\obj\Debug\Negocios.dll
+D:\Reporsitorio\MotorAnalisisFinanciera\MotorAnalisisFinanaciera\Negocios\obj\Debug\Negocios.pdb

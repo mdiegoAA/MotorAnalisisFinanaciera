@@ -22,3 +22,15 @@ C:\Users\mdiego\Desktop\wpfLDAP\Datos\bin\Debug\Newtonsoft.Json.xml
 C:\Users\mdiego\Desktop\wpfLDAP\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
 C:\Users\mdiego\Desktop\wpfLDAP\Datos\obj\Debug\Datos.dll
 C:\Users\mdiego\Desktop\wpfLDAP\Datos\obj\Debug\Datos.pdb
+D:\Reporsitorio\MotorAnalisisFinanciera\MotorAnalisisFinanaciera\Datos\bin\Debug\Datos.dll
+D:\Reporsitorio\MotorAnalisisFinanciera\MotorAnalisisFinanaciera\Datos\bin\Debug\Datos.pdb
+D:\Reporsitorio\MotorAnalisisFinanciera\MotorAnalisisFinanaciera\Datos\bin\Debug\Entidades.dll
+D:\Reporsitorio\MotorAnalisisFinanciera\MotorAnalisisFinanaciera\Datos\bin\Debug\Excel.dll
+D:\Reporsitorio\MotorAnalisisFinanciera\MotorAnalisisFinanaciera\Datos\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\Reporsitorio\MotorAnalisisFinanciera\MotorAnalisisFinanaciera\Datos\bin\Debug\Newtonsoft.Json.dll
+D:\Reporsitorio\MotorAnalisisFinanciera\MotorAnalisisFinanaciera\Datos\bin\Debug\Entidades.pdb
+D:\Reporsitorio\MotorAnalisisFinanciera\MotorAnalisisFinanaciera\Datos\bin\Debug\Excel.pdb
+D:\Reporsitorio\MotorAnalisisFinanciera\MotorAnalisisFinanaciera\Datos\bin\Debug\Newtonsoft.Json.xml
+D:\Reporsitorio\MotorAnalisisFinanciera\MotorAnalisisFinanaciera\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+D:\Reporsitorio\MotorAnalisisFinanciera\MotorAnalisisFinanaciera\Datos\obj\Debug\Datos.dll
+D:\Reporsitorio\MotorAnalisisFinanciera\MotorAnalisisFinanaciera\Datos\obj\Debug\Datos.pdb

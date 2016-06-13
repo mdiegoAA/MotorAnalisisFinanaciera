@@ -95,10 +95,10 @@ $(document).ready(function () {
 
             nombreCuentas.empty();
 
-          //  alert("Prueba");
+            //  alert("Prueba");
 
-          
-          
+
+
 
 
 
@@ -108,7 +108,7 @@ $(document).ready(function () {
             if (periodo == "M") {
 
                 traerInformacionNombreMeses();
-                   traerNombreSaldoMensual();
+                traerNombreSaldoMensual();
 
             }
 
@@ -140,7 +140,7 @@ $(document).ready(function () {
                         var Periodo = $("#Periodo option:selected").val();
                         var data = JSON.parse(result.d);
                         //  alert(data);
-                     
+
 
                         var tempN = "<tr>";
                         var tempV = "<tr>";
@@ -201,11 +201,11 @@ $(document).ready(function () {
 
                         }
 
-                       
 
-                          
-                        
-                       
+
+
+
+
 
                     },
                     error: function (err) {
@@ -639,7 +639,7 @@ $(document).ready(function () {
 
                 traerInformacionNombreMesesTrimestral();
                 traerNombreSaldoMensualTriemestral()
-              //  pararAnimacion();
+                //  pararAnimacion();
 
             }
             function traerInformacionNombreMesesTrimestral() {
@@ -1149,7 +1149,7 @@ $(document).ready(function () {
                             tablenewR.append(tempP);
                         }
 
-                    pararAnimacion();
+                        pararAnimacion();
 
 
 
@@ -1167,19 +1167,20 @@ $(document).ready(function () {
 
 
 
-            if (periodo == "T" && saldos == "V") {
+            if (periodo == "S") {
 
-            //    obtenerMesTrimestral();
-             //   variacionTrimestral();
-            //    pararAnimacion();
-
+                traerInformacionNombreMesesSemestral();
+                traerNombreSaldoMensualSemestral();
             }
+
+
+
 
             else {
 
 
-             //   traerInformacion();
-              //  traerNombreTables();
+                //   traerInformacion();
+                //  traerNombreTables();
 
             }
 
@@ -2014,7 +2015,7 @@ function imprimirMensula(data) {
 
                 var fecha4 = obtenerFecha(data.prueba[i].Column4);
                 mes = fechaMes(data.prueba[i].Column4);
-            //    mes = fechaMes(data.prueba[i].Column4);
+                //    mes = fechaMes(data.prueba[i].Column4);
                 temp += "<td style='color:black'>" + numberWithCommas(((parseFloat(numeroPosicion4)))) + "</td>";
             }
 
@@ -2153,7 +2154,7 @@ function imprimirMensula(data) {
                 tempV += "<td>" + numberWithCommas(variacion) + "</td>";
 
                 //  temp += "<td>" + numberWithCommas(((parseFloat(numeroPosicion16)) )) + "</td>";
-               // tempV += "<td>" + numberWithCommas((((parseFloat(numeroPosicion16)) - parseFloat(numeroPosicion15)))) + "</td>";
+                // tempV += "<td>" + numberWithCommas((((parseFloat(numeroPosicion16)) - parseFloat(numeroPosicion15)))) + "</td>";
                 tempP += "<td>" + numberWithCommas(((((parseFloat(numeroPosicion16)) - parseFloat(numeroPosicion15)) / parseFloat(numeroPosicion15)))) + "</td>";
             }
             if (data.prueba[i].Column17 != null) {
@@ -2343,8 +2344,7 @@ function hallarVariacion(data, dataR, mes, mesV) {
         if (cuentaRsult.length > 0) {
 
 
-            for (var j = 0 ; j <= cuentaRsult.length - 1 ; j++)
-            {
+            for (var j = 0 ; j <= cuentaRsult.length - 1 ; j++) {
 
 
                 p = cuentaRsult[j].charAt(0);
@@ -2352,26 +2352,26 @@ function hallarVariacion(data, dataR, mes, mesV) {
 
                     if (mes == "1" && mesV == "12") {
 
-                 //       console.log("-------------Pruebacdasdasdasd-----------------------");
+                        //       console.log("-------------Pruebacdasdasdasd-----------------------");
                         return data;
 
                     }
 
                     else {
-                    //    console.log("-------------Prueba2-----------------------");
+                        //    console.log("-------------Prueba2-----------------------");
                         return (data - dataR);
 
                     }
                 }
 
-              
+
             }
 
             return (data - dataR);
         }
         else {
 
-     //       console.log("-------------Prueba4-----------------------");
+            //       console.log("-------------Prueba4-----------------------");
             return (data - dataR);
 
 
@@ -2404,13 +2404,13 @@ function hallarVariacion(data, dataR, mes, mesV) {
 
                     if ((mes == "1" && mesV == "12") || (mes == "7" && mesV == "6")) {
 
-                   //     console.log("-------------Pruebacdasdasdasd-----------------------");
+                        //     console.log("-------------Pruebacdasdasdasd-----------------------");
                         return data;
 
                     }
 
                     else {
-                     //   console.log("-------------Prueba2-----------------------");
+                        //   console.log("-------------Prueba2-----------------------");
                         return (data - dataR);
 
                     }
@@ -2423,7 +2423,7 @@ function hallarVariacion(data, dataR, mes, mesV) {
         }
         else {
 
-         //   console.log("-------------Prueba4-----------------------");
+            //   console.log("-------------Prueba4-----------------------");
             return (data - dataR);
 
 
@@ -2433,7 +2433,7 @@ function hallarVariacion(data, dataR, mes, mesV) {
 
     }
 
-    
+
 
     // console.log(Rsult);
 
@@ -2441,9 +2441,9 @@ function hallarVariacion(data, dataR, mes, mesV) {
 }
 
 function hallarVariacionTrimestral(data, dataR, mes, mesV) {
-   
 
-  
+
+
     var corteContable = $("#Ccontable option:selected").val();
 
     if (corteContable == "A") {
@@ -2557,11 +2557,128 @@ function hallarVariacionTrimestral(data, dataR, mes, mesV) {
 
 }
 
+function hallarVariacionSemestral(data, dataR, mes, mesV) {
+
+
+
+    var corteContable = $("#Ccontable option:selected").val();
+
+    if (corteContable == "A") {
+
+        //    console.log(mes + "-" + mesV);
+
+        var Rsult = cuentaRsultaCont;
+        var p;
+        var auxVar = 0;
+        //   console.log("----------------------------------------");
+        //    console.log(cuentaRsult.length);
+        //    console.log("----------------------------------------");
+        if (cuentaRsult.length > 0) {
+
+
+            for (var j = 0 ; j <= cuentaRsult.length - 1 ; j++) {
+
+
+                p = cuentaRsult[j].charAt(0);
+                if (p == Rsult.charAt(0)) {
+
+                    if (mes == "12" && mesV == "6") {
+                        console.log(mes + " " + mesV);
+
+                        //       console.log("-------------Pruebacdasdasdasd-----------------------");
+                        return data;
+
+                    }
+
+                    else {
+                        //    console.log("-------------Prueba2-----------------------");
+                        return (data - dataR);
+
+                    }
+                }
+
+
+            }
+
+            return (data - dataR);
+        }
+        else {
+
+            //       console.log("-------------Prueba4-----------------------");
+            return (data - dataR);
+
+
+        }
+
+
+
+    }
+
+
+
+    if (corteContable == "S") {
+
+        //    console.log(mes + "-" + mesV);
+
+        var Rsult = cuentaRsultaCont;
+        var p;
+        var auxVar = 0;
+        //   console.log("----------------------------------------");
+        //    console.log(cuentaRsult.length);
+        //    console.log("----------------------------------------");
+        if (cuentaRsult.length > 0) {
+
+
+            for (var j = 0 ; j <= cuentaRsult.length - 1 ; j++) {
+
+
+                p = cuentaRsult[j].charAt(0);
+                if (p == Rsult.charAt(0)) {
+
+                    if ((mes == "6" && mesV == "12") || (mes == "12" && mesV == "6")) {
+                        console.log(mes + " " + mesV);
+
+                        //     console.log("-------------Pruebacdasdasdasd-----------------------");
+                        return data;
+
+                    }
+
+                    else {
+                        //   console.log("-------------Prueba2-----------------------");
+                        return (data - dataR);
+
+                    }
+                }
+
+
+            }
+
+            return (data - dataR);
+        }
+        else {
+
+            //   console.log("-------------Prueba4-----------------------");
+            return (data - dataR);
+
+
+        }
+
+
+
+    }
+
+
+
+    // console.log(Rsult);
+
+
+}
+
 
 
 function imprimirTrimestral(data) {
 
-  
+
 
     var Variacion = $("#Variacion");
     var temp = "";
@@ -2571,16 +2688,16 @@ function imprimirTrimestral(data) {
     var tempVariacion = "";
     var cifras = $("#cifras option:selected").val();
     var TrimestralVariacion = 0;
-  
-
-       
-        variacionTrimestral(data);
-
-     
-       
 
 
-    
+
+    variacionTrimestral(data);
+
+
+
+
+
+
 
     temp += "</tr>";
     tempPo += "</tr>";
@@ -3275,6 +3392,532 @@ function genararGrafica() {
 }
 
 
+
+function traerInformacionNombreMesesSemestral() {
+
+    var fechaInicial = $("#datepicker").val();
+    var fechaFinal = $("#datepicker2").val();
+    var CentroCosto = $("#optionCentroCosto option:selected").val();
+    var fechaArchivo = "";
+
+    var InformacionCuentas = {
+
+        fechaInicial: fechaInicial,
+        fechaFinal: fechaFinal,
+        CentroCosto: CentroCosto
+    }
+
+    $.ajax({
+        url: "Variaciones.aspx/varicionMesSmestral",
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(InformacionCuentas),
+        dataType: "json",
+
+        success: function (result) {
+
+
+            animacion();
+            var Periodo = $("#Periodo option:selected").val();
+            var data = JSON.parse(result.d);
+            //  alert(data);
+
+
+            var tempN = "<tr>";
+            var tempV = "<tr>";
+            var tempP = "<tr>";
+            var variable = "";
+            var FechaTemporal = "";
+            //  tempN += "<th>" + "Graficar" + "</th>";
+            tempN += "<th>" + "Cuenta" + "</th>";
+            tempN += "<th>" + "Descripcion Cuenta" + "</th>";
+            tempV += "<th>" + "Cuenta" + "</th>";
+            tempV += "<th>" + "Descripcion Cuenta" + "</th>";
+            tempP += "<th>" + "Cuenta" + "</th>";
+            tempP += "<th>" + "Descripcion Cuenta" + "</th>";
+
+            for (var j = 0; j < data.length; j++) {
+
+
+                var mes = obtenerFecha(data[j]);
+
+                var fecha = obtenerFechaMes(data[j]);
+
+
+                tempN += "<th>" + fecha + "</th>";
+
+
+                if (j != 0) {
+
+                    var mesV = obtenerFechaMes(data[j]);
+                    var mesVs = obtenerFechaMes(data[j - 1]);
+
+
+                    //  tempV += "<th>" + mesVs + " - " + mesV + "</th>";
+                    tempV += "<th>" + mesV + " - " + mesVs + "</th>";
+                    tempP += "<th>" + " ( " + mesV + " - " + mesVs + " )/ " + mesVs + "</th>";
+                }
+            }
+            tempV += "</tr>";
+            tempN += "</tr>";
+
+            var Saldos = $("#Saldos option:selected").val();
+            var tablenew = $("#nombreCuentas");
+            tablenew.empty();
+
+            if (Saldos == "S") {
+
+                tablenew.append(tempN);
+
+            }
+            if (Saldos == "V") {
+
+                tablenew.append(tempV);
+
+            }
+
+            if (Saldos == "P") {
+
+                tablenew.append(tempP);
+
+            }
+
+
+
+
+
+
+
+        },
+        error: function (err) {
+            alert("Fail");
+        }
+
+
+    });
+
+
+
+}
+function traerNombreSaldoMensualSemestral() {
+
+
+    var fechaInicial = $("#datepicker").val();
+    var fechaFinal = $("#datepicker2").val();
+    var CentroCosto = $("#optionCentroCosto option:selected").val();
+    var RangoCuentaInicial = $("#RangoCuentaInicial").val();
+    var RangoCuentaFinal = $("#RangoCuentaFinal").val();
+
+
+    var fechaArchivo = "";
+
+    var data = {
+        fechaInicial: fechaInicial,
+        fechaFinal: fechaFinal,
+        CentroCosto: CentroCosto,
+        RangoCuentaInicial: RangoCuentaInicial,
+        RangoCuentaFinal: RangoCuentaFinal
+
+    }
+
+    $.ajax({
+
+        url: "Variaciones.aspx/varicionSmestral",
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(data),
+        dataType: "json",
+
+        success: function (result) {
+
+            var data = JSON.parse(result.d);
+
+            var Variacion = $("#Variacion");
+            var temp = "";
+            var tempV = "";
+            var tempP = "";
+            var tempVariacion = "";
+            var numeroMayorVariacion = $("#RangoCuentaFinal").val();
+            var numeroMenorVariacion = $("#RangoCuentaInicial").val();
+
+
+
+
+            if (numeroMayorVariacion == "") {
+
+                numeroMayorVariacion = 10000000000;
+
+
+            }
+
+            if (numeroMenorVariacion == "") {
+
+                numeroMenorVariacion = 0;
+
+            }
+
+
+            for (var i = 0; i < data.prueba.length - 1; i++) {
+                temp += "<tr>";
+                tempV += "<tr>";
+                tempP += "<tr>"
+                var variacion = "";
+                var mes = "";
+
+                cuentaRsultaCont = data.prueba[i].CodigoCuenta;
+
+                if (parseFloat(data.prueba[i].CodigoCuenta) >= parseFloat(numeroMenorVariacion) && parseFloat(data.prueba[i].CodigoCuenta) <= parseFloat(numeroMayorVariacion)) {
+
+
+
+
+                    //       console.log(data.prueba[i].CodigoCuenta);
+
+                    // temp += "<div><td><button type='button' onclick='grafica(" + data.prueba[i].IdColumna + ")' class='btn btn-outline btn-primary btn-xs'>Grafica</button></td></div>";
+                    temp += "<td>" + data.prueba[i].CodigoCuenta + "</td>";
+                    temp += "<td>" + data.prueba[i].DescripcionCuenta + "</td>";
+
+                    tempV += "<td>" + data.prueba[i].CodigoCuenta + "</td>";
+                    tempV += "<td>" + data.prueba[i].DescripcionCuenta + "</td>";
+
+                    tempP += "<td>" + data.prueba[i].CodigoCuenta + "</td>";
+                    tempP += "<td>" + data.prueba[i].DescripcionCuenta + "</td>";
+
+
+
+                    if (data.prueba[i].Column4 != null) {
+                        var numeroPosicion4 = obtenerPosicion(data.prueba[i].Column4);
+
+
+
+                        var fecha4 = obtenerFecha(data.prueba[i].Column4);
+                        mes = fechaMes(data.prueba[i].Column4);
+                        //    mes = fechaMes(data.prueba[i].Column4);
+                        temp += "<td style='color:black'>" + numberWithCommas(((parseFloat(numeroPosicion4)))) + "</td>";
+                    }
+
+                    if (data.prueba[i].Column5 != null) {
+                        var numeroPosicion5 = obtenerPosicion(data.prueba[i].Column5);
+                        var fecha5 = obtenerFecha(data.prueba[i].Column5);
+
+                        mes = fechaMes(data.prueba[i].Column5);
+                        mesv = fechaMes(data.prueba[i].Column4);
+                        temp += "<td style='color:black'>" + numberWithCommas(((parseFloat(numeroPosicion5)))) + "</td>";
+                        //  temp += "<td style='color:" + color + "'>" + numberWithCommas(((parseFloat(numeroPosicion5)))) + "</td>";
+
+                        variacion = hallarVariacionSemestral(numeroPosicion5, numeroPosicion4, mes, mesv);
+
+                        tempV += "<td>" + numberWithCommas(variacion) + "</td>";
+                        tempP += "<td>" + numberWithCommas(((((parseFloat(numeroPosicion5)) - parseFloat(numeroPosicion4)) / parseFloat(numeroPosicion5)))) + "</td>";
+
+                    }
+                    if (data.prueba[i].Column6 != null) {
+                        var numeroPosicion6 = obtenerPosicion(data.prueba[i].Column6);
+                        var fecha6 = obtenerFecha(data.prueba[i].Column6);
+                        mes = fechaMes(data.prueba[i].Column6);
+                        mesv = fechaMes(data.prueba[i].Column5);
+                        temp += "<td style='color:black'>" + numberWithCommas(((parseFloat(numeroPosicion6)))) + "</td>";
+                        variacion = hallarVariacionSemestral(numeroPosicion6, numeroPosicion5, mes, mesv);
+                        // tempV += "<td>" + numberWithCommas(variacion) + "</td>";
+                        tempV += "<td>" + numberWithCommas(variacion) + "</td>";
+                        tempP += "<td>" + numberWithCommas(((((parseFloat(numeroPosicion6)) - parseFloat(numeroPosicion5)) / parseFloat(numeroPosicion5)))) + "</td>";
+                    }
+                    if (data.prueba[i].Column7 != null) {
+                        var numeroPosicion7 = obtenerPosicion(data.prueba[i].Column7);
+                        temp += "<td style='color:black'>" + numberWithCommas(((parseFloat(numeroPosicion7)))) + "</td>";
+                        // temp += "<td style='color:" + color + "'>" + numberWithCommas(((parseFloat(numeroPosicion7)))) + "</td>";
+                        mes = fechaMes(data.prueba[i].Column7);
+                        mesv = fechaMes(data.prueba[i].Column6);
+                        variacion = hallarVariacionSemestral(numeroPosicion7, numeroPosicion6, mes, mesv);
+                        tempV += "<td>" + numberWithCommas(variacion) + "</td>";
+                        tempP += "<td>" + numberWithCommas(((((parseFloat(numeroPosicion7)) - parseFloat(numeroPosicion6)) / parseFloat(numeroPosicion6)))) + "</td>";
+                    }
+                    if (data.prueba[i].Column8 != null) {
+                        var numeroPosicion8 = obtenerPosicion(data.prueba[i].Column8);
+                        mes = fechaMes(data.prueba[i].Column8);
+                        mesv = fechaMes(data.prueba[i].Column7);
+                        temp += "<td style='color:black'>" + numberWithCommas(((parseFloat(numeroPosicion8)))) + "</td>";
+                        variacion = hallarVariacionSemestral(numeroPosicion8, numeroPosicion7, mes, mesv);
+                        tempV += "<td>" + numberWithCommas(variacion) + "</td>";
+                        tempP += "<td>" + numberWithCommas(((((parseFloat(numeroPosicion8)) - parseFloat(numeroPosicion7)) / parseFloat(numeroPosicion7)))) + "</td>";
+                    }
+                    if (data.prueba[i].Column9 != null) {
+                        var numeroPosicion9 = obtenerPosicion(data.prueba[i].Column9);
+                        temp += "<td style='color:black'>" + numberWithCommas(((parseFloat(numeroPosicion9)))) + "</td>";
+                        mes = fechaMes(data.prueba[i].Column9);
+                        mesv = fechaMes(data.prueba[i].Column8);
+                        variacion = hallarVariacionSemestral(numeroPosicion9, numeroPosicion8, mes, mesv);
+                        tempV += "<td>" + numberWithCommas(variacion) + "</td>";
+                        tempP += "<td>" + numberWithCommas(((((parseFloat(numeroPosicion9)) - parseFloat(numeroPosicion8)) / parseFloat(numeroPosicion8)))) + "</td>";
+                    }
+
+                    if (data.prueba[i].Column10 != null) {
+                        var numeroPosicion10 = obtenerPosicion(data.prueba[i].Column10);
+                        temp += "<td style='color:black'>" + numberWithCommas(((parseFloat(numeroPosicion10)))) + "</td>";
+                        mes = fechaMes(data.prueba[i].Column10);
+                        mesv = fechaMes(data.prueba[i].Column9);
+                        variacion = hallarVariacionSemestral(numeroPosicion10, numeroPosicion9, mes, mesv);
+                        tempV += "<td>" + numberWithCommas(variacion) + "</td>";
+                        tempP += "<td>" + numberWithCommas(((((parseFloat(numeroPosicion10)) - parseFloat(numeroPosicion9)) / parseFloat(numeroPosicion9)))) + "</td>";
+                    }
+                    if (data.prueba[i].Column11 != null) {
+                        var numeroPosicion11 = obtenerPosicion(data.prueba[i].Column11);
+                        temp += "<td style='color:black'>" + numberWithCommas(((parseFloat(numeroPosicion11)))) + "</td>";
+                        mes = fechaMes(data.prueba[i].Column11);
+                        mesv = fechaMes(data.prueba[i].Column10);
+                        //  temp += "<td>" + numberWithCommas(((parseFloat(numeroPosicion11)) )) + "</td>";
+                        variacion = hallarVariacionSemestral(numeroPosicion11, numeroPosicion10, mes, mesv);
+                        tempV += "<td>" + numberWithCommas(variacion) + "</td>";
+                        // tempV += "<td>" + numberWithCommas((((parseFloat(numeroPosicion11)) - parseFloat(numeroPosicion10)))) + "</td>";
+                        tempP += "<td>" + numberWithCommas(((((parseFloat(numeroPosicion11)) - parseFloat(numeroPosicion10)) / parseFloat(numeroPosicion10)))) + "</td>";
+                    }
+                    if (data.prueba[i].Column12 != null) {
+                        var numeroPosicion12 = obtenerPosicion(data.prueba[i].Column12);
+                        temp += "<td style='color:black'>" + numberWithCommas(((parseFloat(numeroPosicion12)))) + "</td>";
+                        mes = fechaMes(data.prueba[i].Column12);
+                        mesv = fechaMes(data.prueba[i].Column11);
+                        //temp += "<td>" + numberWithCommas(((parseFloat(numeroPosicion12)) )) + "</td>";
+                        variacion = hallarVariacionSemestral(numeroPosicion12, numeroPosicion11, mes, mesv);
+                        tempV += "<td>" + numberWithCommas(variacion) + "</td>";
+
+                        //  tempV += "<td>" + numberWithCommas((((parseFloat(numeroPosicion12)) - parseFloat(numeroPosicion11)))) + "</td>";
+                        tempP += "<td>" + numberWithCommas(((((parseFloat(numeroPosicion12)) - parseFloat(numeroPosicion11)) / parseFloat(numeroPosicion11)))) + "</td>";
+                    }
+                    if (data.prueba[i].Column13 != null) {
+                        var numeroPosicion13 = obtenerPosicion(data.prueba[i].Column13);
+                        temp += "<td style='color:black'>" + numberWithCommas(((parseFloat(numeroPosicion13)))) + "</td>";
+                        //   temp += "<td>" + numberWithCommas(((parseFloat(numeroPosicion13)) )) + "</td>";
+                        mes = fechaMes(data.prueba[i].Column13);
+                        mesv = fechaMes(data.prueba[i].Column12);
+                        variacion = hallarVariacionSemestral(numeroPosicion13, numeroPosicion12, mes, mesv);
+                        tempV += "<td>" + numberWithCommas(variacion) + "</td>";
+
+                        //  tempV += "<td>" + numberWithCommas((((parseFloat(numeroPosicion13)) - parseFloat(numeroPosicion12)))) + "</td>";
+                        tempP += "<td>" + numberWithCommas(((((parseFloat(numeroPosicion13)) - parseFloat(numeroPosicion12)) / parseFloat(numeroPosicion12)))) + "</td>";
+                    }
+                    if (data.prueba[i].Column14 != null) {
+                        var numeroPosicion14 = obtenerPosicion(data.prueba[i].Column14);
+                        temp += "<td style='color:black'>" + numberWithCommas(((parseFloat(numeroPosicion14)))) + "</td>";
+                        mes = fechaMes(data.prueba[i].Column14);
+                        mesv = fechaMes(data.prueba[i].Column13);
+                        //   temp += "<td>" + numberWithCommas(((parseFloat(numeroPosicion14)) )) + "</td>";
+
+                        variacion = hallarVariacionSemestral(numeroPosicion14, numeroPosicion13, mes, mesv);
+                        tempV += "<td>" + numberWithCommas(variacion) + "</td>";
+
+                        // tempV += "<td>" + numberWithCommas((((parseFloat(numeroPosicion14)) - parseFloat(numeroPosicion13)))) + "</td>";
+                        tempP += "<td>" + numberWithCommas(((((parseFloat(numeroPosicion14)) - parseFloat(numeroPosicion13)) / parseFloat(numeroPosicion13)))) + "</td>";
+                    }
+                    if (data.prueba[i].Column15 != null) {
+                        var numeroPosicion15 = obtenerPosicion(data.prueba[i].Column15);
+                        temp += "<td style='color:black'>" + numberWithCommas(((parseFloat(numeroPosicion15)))) + "</td>";
+                        //   temp += "<td>" + numberWithCommas(((parseFloat(numeroPosicion15)) )) + "</td>";
+                        mes = fechaMes(data.prueba[i].Column15);
+                        mesv = fechaMes(data.prueba[i].Column14);
+                        variacion = hallarVariacionSemestral(numeroPosicion15, numeroPosicion14, mes, mesv);
+                        tempV += "<td>" + numberWithCommas(variacion) + "</td>";
+
+
+                        //tempV += "<td>" + numberWithCommas((((parseFloat(numeroPosicion15)) - parseFloat(numeroPosicion14)))) + "</td>";
+                        tempP += "<td>" + numberWithCommas(((((parseFloat(numeroPosicion15)) - parseFloat(numeroPosicion14)) / parseFloat(numeroPosicion14)))) + "</td>";
+                    }
+                    if (data.prueba[i].Column16 != null) {
+                        var numeroPosicion16 = obtenerPosicion(data.prueba[i].Column16);
+                        temp += "<td style='color:black'>" + numberWithCommas(((parseFloat(numeroPosicion16)))) + "</td>";
+                        mes = fechaMes(data.prueba[i].Column16);
+                        mesv = fechaMes(data.prueba[i].Column15);
+                        variacion = hallarVariacionSemestral(numeroPosicion16, numeroPosicion15, mes, mesv);
+
+                        tempV += "<td>" + numberWithCommas(variacion) + "</td>";
+
+                        //  temp += "<td>" + numberWithCommas(((parseFloat(numeroPosicion16)) )) + "</td>";
+                        // tempV += "<td>" + numberWithCommas((((parseFloat(numeroPosicion16)) - parseFloat(numeroPosicion15)))) + "</td>";
+                        tempP += "<td>" + numberWithCommas(((((parseFloat(numeroPosicion16)) - parseFloat(numeroPosicion15)) / parseFloat(numeroPosicion15)))) + "</td>";
+                    }
+                    if (data.prueba[i].Column17 != null) {
+                        var numeroPosicion17 = obtenerPosicion(data.prueba[i].Column17);
+                        temp += "<td style='color:black'>" + numberWithCommas(((parseFloat(numeroPosicion17)))) + "</td>";
+                        mes = fechaMes(data.prueba[i].Column17);
+                        mesv = fechaMes(data.prueba[i].Column16);
+                        // temp += "<td>" + numberWithCommas(((parseFloat(numeroPosicion17)) )) + "</td>";
+                        // tempV += "<td>" + numberWithCommas((((parseFloat(numeroPosicion17)) - parseFloat(numeroPosicion16)))) + "</td>";
+
+                        variacion = hallarVariacionSemestral(numeroPosicion17, numeroPosicion16, mes, mesv);
+                        tempV += "<td>" + numberWithCommas(variacion) + "</td>";
+
+
+
+                        tempP += "<td>" + numberWithCommas(((((parseFloat(numeroPosicion17)) - parseFloat(numeroPosicion16)) / parseFloat(numeroPosicion16)))) + "</td>";
+                    }
+                    if (data.prueba[i].Column18 != null) {
+                        var numeroPosicion18 = obtenerPosicion(data.prueba[i].Column18);
+                        mes = fechaMes(data.prueba[i].Column18);
+                        mesv = fechaMes(data.prueba[i].Column17);
+                        temp += "<td style='color:black'>" + numberWithCommas(((parseFloat(numeroPosicion18)))) + "</td>";
+                        //    temp += "<td>" + numberWithCommas(((parseFloat(numeroPosicion18)) )) + "</td>";
+
+
+                        variacion = hallarVariacionSemestral(numeroPosicion18, numeroPosicion17, mes, mesv);
+                        tempV += "<td>" + numberWithCommas(variacion) + "</td>";
+
+                        //  tempV += "<td>" + numberWithCommas((((parseFloat(numeroPosicion18)) - parseFloat(numeroPosicion17)))) + "</td>";
+                        tempP += "<td>" + numberWithCommas(((((parseFloat(numeroPosicion18)) - parseFloat(numeroPosicion17)) / parseFloat(numeroPosicion17)))) + "</td>";
+                    }
+                    if (data.prueba[i].Column19 != null) {
+                        var numeroPosicion19 = obtenerPosicion(data.prueba[i].Column19);
+                        mes = fechaMes(data.prueba[i].Column19);
+                        mesv = fechaMes(data.prueba[i].Column18);
+                        temp += "<td style='color:black'>" + numberWithCommas(((parseFloat(numeroPosicion19)))) + "</td>";
+
+                        //    temp += "<td>" + numberWithCommas(((parseFloat(numeroPosicion19)) )) + "</td>";
+
+                        variacion = hallarVariacionSemestral(numeroPosicion19, numeroPosicion18, mes, mesv);
+                        tempV += "<td>" + numberWithCommas(variacion) + "</td>";
+                        tempP += "<td>" + numberWithCommas(((((parseFloat(numeroPosicion19)) - parseFloat(numeroPosicion18)) / parseFloat(numeroPosicion18)))) + "</td>";
+                    }
+                    if (data.prueba[i].Column20 != null) {
+                        var numeroPosicion20 = obtenerPosicion(data.prueba[i].Column20);
+                        mes = fechaMes(data.prueba[i].Column20);
+                        mesv = fechaMes(data.prueba[i].Column19);
+
+                        temp += "<td style='color:black'>" + numberWithCommas(((parseFloat(numeroPosicion20)))) + "</td>";
+                        // temp += "<td>" + numberWithCommas(((parseFloat(numeroPosicion20)) )) + "</td>";
+
+                        variacion = hallarVariacionSemestral(numeroPosicion20, numeroPosicion19, mes, mesv);
+                        tempV += "<td>" + numberWithCommas(variacion) + "</td>";
+                        tempP += "<td>" + numberWithCommas(((((parseFloat(numeroPosicion20)) - parseFloat(numeroPosicion19)) / parseFloat(numeroPosicion19)))) + "</td>";
+                    }
+                    if (data.prueba[i].Column21 != null) {
+                        var numeroPosicion21 = obtenerPosicion(data.prueba[i].Column21);
+                        mes = fechaMes(data.prueba[i].Column21);
+                        mesv = fechaMes(data.prueba[i].Column20);
+                        temp += "<td style='color:black'>" + numberWithCommas(((parseFloat(numeroPosicion21)))) + "</td>";
+                        //  temp += "<td>" + numberWithCommas(((parseFloat(numeroPosicion21)) )) + "</td>";
+                        //  tempV += "<td>" + numberWithCommas((((parseFloat(numeroPosicion21)) - parseFloat(numeroPosicion20)))) + "</td>";
+
+                        variacion = hallarVariacionSemestral(numeroPosicion21, numeroPosicion20, mes, mesv);
+                        tempV += "<td>" + numberWithCommas(variacion) + "</td>";
+                        tempP += "<td>" + numberWithCommas(((((parseFloat(numeroPosicion21)) - parseFloat(numeroPosicion20)) / parseFloat(numeroPosicion20)))) + "</td>";
+                    }
+                    if (data.prueba[i].Column22 != null) {
+                        var numeroPosicion22 = obtenerPosicion(data.prueba[i].Column22);
+                        mes = fechaMes(data.prueba[i].Column22);
+                        mesv = fechaMes(data.prueba[i].Column21);
+                        temp += "<td style='color:black'>" + numberWithCommas(((parseFloat(numeroPosicion22)))) + "</td>";
+                        //  temp += "<td>" + numberWithCommas(((parseFloat(numeroPosicion22)) )) + "</td>";
+                        //   tempV += "<td>" + numberWithCommas((((parseFloat(numeroPosicion22)) - parseFloat(numeroPosicion21)))) + "</td>";
+
+                        variacion = hallarVariacionSemestral(numeroPosicion22, numeroPosicion21, mes, mesv);
+                        tempV += "<td>" + numberWithCommas(variacion) + "</td>";
+
+                        tempP += "<td>" + numberWithCommas(((((parseFloat(numeroPosicion22)) - parseFloat(numeroPosicion21)) / parseFloat(numeroPosicion21)))) + "</td>";
+                    }
+                    if (data.prueba[i].Column23 != null) {
+                        var numeroPosicion23 = obtenerPosicion(data.prueba[i].Column23);
+                        temp += "<td style='color:black'>" + numberWithCommas(((parseFloat(numeroPosicion23)))) + "</td>";
+                        mes = fechaMes(data.prueba[i].Column23);
+                        mesv = fechaMes(data.prueba[i].Column22);
+                        //  temp += "<td>" + numberWithCommas(((parseFloat(numeroPosicion23)) )) + "</td>";
+                        //tempV += "<td>" + numberWithCommas((((parseFloat(numeroPosicion23)) - parseFloat(numeroPosicion22)))) + "</td>";
+
+                        variacion = hallarVariacionSemestral(numeroPosicion23, numeroPosicion22, mes, mesv);
+                        tempV += "<td>" + numberWithCommas(variacion) + "</td>";
+
+                        tempP += "<td>" + numberWithCommas(((((parseFloat(numeroPosicion23)) - parseFloat(numeroPosicion22)) / parseFloat(numeroPosicion22)))) + "</td>";
+                    }
+                    if (data.prueba[i].Column24 != null) {
+                        var numeroPosicion24 = obtenerPosicion(data.prueba[i].Column24);
+                        mes = fechaMes(data.prueba[i].Column24);
+                        mesv = fechaMes(data.prueba[i].Column23);
+                        temp += "<td style='color:black'>" + numberWithCommas(((parseFloat(numeroPosicion24)))) + "</td>";
+                        //  temp += "<td>" + numberWithCommas(((parseFloat(numeroPosicion24)) )) + "</td>";
+                        //  tempV += "<td>" + numberWithCommas((((parseFloat(numeroPosicion24)) - parseFloat(numeroPosicion23)))) + "</td>";
+
+
+                        variacion = hallarVariacionSemestral(numeroPosicion24, numeroPosicion23, mes, mesv);
+                        tempV += "<td>" + numberWithCommas(variacion) + "</td>";
+
+                        tempP += "<td>" + numberWithCommas(((((parseFloat(numeroPosicion24)) - parseFloat(numeroPosicion23)) / parseFloat(numeroPosicion23)))) + "</td>";
+                    }
+                    if (data.prueba[i].Column25 != null) {
+                        var numeroPosicion25 = obtenerPosicion(data.prueba[i].Column25);
+                        mes = fechaMes(data.prueba[i].Column25);
+                        mesv = fechaMes(data.prueba[i].Column24);
+                        temp += "<td style='color:black'>" + numberWithCommas(((parseFloat(numeroPosicion25)))) + "</td>";
+
+
+                        //    temp += "<td>" + numberWithCommas(((parseFloat(numeroPosicion25)) )) + "</td>";
+                        //  tempV += "<td>" + numberWithCommas((((parseFloat(numeroPosicion25)) - parseFloat(numeroPosicion24)))) + "</td>";
+
+                        variacion = hallarVariacionSemestral(numeroPosicion25, numeroPosicion24, mes, mesv);
+                        tempV += "<td>" + numberWithCommas(variacion) + "</td>";
+
+                        tempP += "<td>" + numberWithCommas(((((parseFloat(numeroPosicion25)) - parseFloat(numeroPosicion24)) / parseFloat(numeroPosicion24)))) + "</td>";
+                    }
+                    if (data.prueba[i].Column26 != null) {
+
+                        var numeroPosicion26 = obtenerPosicion(data.prueba[i].Column26);
+                        mes = fechaMes(data.prueba[i].Column26);
+                        mesv = fechaMes(data.prueba[i].Column25);
+                        temp += "<td style='color:black'>" + numberWithCommas(((parseFloat(numeroPosicion26)))) + "</td>";
+                        //   temp += "<td>" + numberWithCommas(((parseFloat(numeroPosicion26)) )) + "</td>";
+                        //  tempV += "<td>" + numberWithCommas((((parseFloat(numeroPosicion26)) - parseFloat(numeroPosicion25)))) + "</td>";
+
+
+                        variacion = hallarVariacionSemestral(numeroPosicion26, numeroPosicion25, mes, mesv);
+                        tempV += "<td>" + numberWithCommas(variacion) + "</td>";
+
+                        tempP += "<td>" + numberWithCommas(((((parseFloat(numeroPosicion26)) - parseFloat(numeroPosicion25)) / parseFloat(numeroPosicion25)))) + "</td>";
+                    }
+                    if (data.prueba[i].Column27 != null) {
+                        var numeroPosicion27 = obtenerPosicion(data.prueba[i].Column27);
+                        mes = fechaMes(data.prueba[i].Column27);
+                        mesv = fechaMes(data.prueba[i].Column26);
+                        temp += "<td style='color:black'>" + numberWithCommas(((parseFloat(numeroPosicion27)))) + "</td>";
+                        // temp += "<td>" + numberWithCommas(((parseFloat(numeroPosicion27)) )) + "</td>";
+                        //  tempV += "<td>" + numberWithCommas((((parseFloat(numeroPosicion27)) - parseFloat(numeroPosicion26)))) + "</td>";
+
+                        variacion = hallarVariacionSemestral(numeroPosicion27, numeroPosicion26, mes, mesv);
+                        tempV += "<td>" + numberWithCommas(variacion) + "</td>";
+
+                        tempP += "<td>" + numberWithCommas(((((parseFloat(numeroPosicion27)) - parseFloat(numeroPosicion26)) / parseFloat(numeroPosicion26)))) + "</td>";
+                    }
+
+
+                }
+
+            }
+
+            var Saldos = $("#Saldos option:selected").val();
+            var tablenewR = $("#tbodyResult");
+            if (Saldos == "S") {
+                tablenewR.append(temp);
+            }
+            if (Saldos == "V") {
+                tablenewR.append(tempV);
+            }
+            if (Saldos == "P") {
+                tablenewR.append(tempP);
+            }
+
+            pararAnimacion();
+
+
+
+        },
+        error: function (err) {
+            alert("error");
+        }
+
+
+    });
+
+
+
+}
+
+
+
 function obtenerMesTrimestral() {
 
     var fechaInicial = $("#datepicker").val();
@@ -3284,7 +3927,7 @@ function obtenerMesTrimestral() {
         fechaInicial: fechaInicial,
         fechaFinal: fechaFinal,
         CentroCosto: CentroCosto,
-      
+
 
     }
     $.ajax({
@@ -3296,7 +3939,7 @@ function obtenerMesTrimestral() {
         dataType: "json",
 
         success: function (result) {
-            
+
             var tempV = "<tr>";
             tempV += "<th>" + "Cuenta" + "</th>";
             tempV += "<th>" + "Descripcion Cuenta" + "</th>";
@@ -3308,7 +3951,7 @@ function obtenerMesTrimestral() {
 
                 } else {
 
-                    tempV +="<th>"+(obtenerFechaMes(data[i]))+"-"+(obtenerFechaMes(data[i-1]))+"</th>";
+                    tempV += "<th>" + (obtenerFechaMes(data[i])) + "-" + (obtenerFechaMes(data[i - 1])) + "</th>";
 
                 }
 
@@ -3316,12 +3959,12 @@ function obtenerMesTrimestral() {
 
 
             }
-    
-      
+
+
             var tablenew = $("#nombreCuentas");
             tablenew.append(tempV);
 
-          
+
         }
     });
 
@@ -3379,7 +4022,7 @@ function variacionTrimestral() {
                     mes = fechaMes(data.prueba[i].Column5);
                     mesv = fechaMes(data.prueba[i].Column4);
                     cuenta = data.prueba[i].CodigoCuenta;
-                    variacion = hallarVariacionTrimestral(numeroPosicion5, numeroPosicion4, mes, mesv , cuenta);
+                    variacion = hallarVariacionTrimestral(numeroPosicion5, numeroPosicion4, mes, mesv, cuenta);
                     tempV += "<td>" + numberWithCommas(variacion) + "</td>";
                 }
 
@@ -3390,7 +4033,7 @@ function variacionTrimestral() {
                     mes = fechaMes(data.prueba[i].Column6);
                     mesv = fechaMes(data.prueba[i].Column5);
                     cuenta = data.prueba[i].CodigoCuenta;
-                    variacion = hallarVariacionTrimestral(numeroPosicion6, numeroPosicion5, mes, mesv ,cuenta);
+                    variacion = hallarVariacionTrimestral(numeroPosicion6, numeroPosicion5, mes, mesv, cuenta);
                     tempV += "<td>" + numberWithCommas(variacion) + "</td>";
                 }
 
@@ -3401,7 +4044,7 @@ function variacionTrimestral() {
                     mes = fechaMes(data.prueba[i].Column7);
                     mesv = fechaMes(data.prueba[i].Column6);
                     cuenta = data.prueba[i].CodigoCuenta;
-                    variacion = hallarVariacionTrimestral(numeroPosicion7, numeroPosicion6, mes, mesv,cuenta);
+                    variacion = hallarVariacionTrimestral(numeroPosicion7, numeroPosicion6, mes, mesv, cuenta);
                     tempV += "<td>" + numberWithCommas(variacion) + "</td>";
                 }
 
@@ -3412,7 +4055,7 @@ function variacionTrimestral() {
                     mes = fechaMes(data.prueba[i].Column8);
                     mesv = fechaMes(data.prueba[i].Column7);
                     cuenta = data.prueba[i].CodigoCuenta;
-                    variacion = hallarVariacionTrimestral(numeroPosicion8, numeroPosicion7, mes, mesv,cuenta);
+                    variacion = hallarVariacionTrimestral(numeroPosicion8, numeroPosicion7, mes, mesv, cuenta);
                     tempV += "<td>" + numberWithCommas(variacion) + "</td>";
                 }
 
@@ -3423,7 +4066,7 @@ function variacionTrimestral() {
                     mes = fechaMes(data.prueba[i].Column9);
                     mesv = fechaMes(data.prueba[i].Column8);
                     cuenta = data.prueba[i].CodigoCuenta;
-                    variacion = hallarVariacionTrimestral(numeroPosicion9, numeroPosicion8, mes, mesv,cuenta);
+                    variacion = hallarVariacionTrimestral(numeroPosicion9, numeroPosicion8, mes, mesv, cuenta);
                     tempV += "<td>" + numberWithCommas(variacion) + "</td>";
                 }
 
@@ -3434,7 +4077,7 @@ function variacionTrimestral() {
                     mes = fechaMes(data.prueba[i].Column10);
                     mesv = fechaMes(data.prueba[i].Column9);
                     cuenta = data.prueba[i].CodigoCuenta;
-                    variacion = hallarVariacionTrimestral(numeroPosicion10, numeroPosicion9, mes, mesv,cuenta);
+                    variacion = hallarVariacionTrimestral(numeroPosicion10, numeroPosicion9, mes, mesv, cuenta);
                     tempV += "<td>" + numberWithCommas(variacion) + "</td>";
                 }
 
@@ -3445,7 +4088,7 @@ function variacionTrimestral() {
                     mes = fechaMes(data.prueba[i].Column11);
                     mesv = fechaMes(data.prueba[i].Column10);
                     cuenta = data.prueba[i].CodigoCuenta;
-                    variacion = hallarVariacionTrimestral(numeroPosicion11, numeroPosicion10, mes, mesv,cuenta);
+                    variacion = hallarVariacionTrimestral(numeroPosicion11, numeroPosicion10, mes, mesv, cuenta);
                     tempV += "<td>" + numberWithCommas(variacion) + "</td>";
                 }
 
@@ -3456,7 +4099,7 @@ function variacionTrimestral() {
                     mes = fechaMes(data.prueba[i].Column12);
                     mesv = fechaMes(data.prueba[i].Column11);
                     cuenta = data.prueba[i].CodigoCuenta;
-                    variacion = hallarVariacionTrimestral(numeroPosicion12, numeroPosicion11, mes, mesv,cuenta);
+                    variacion = hallarVariacionTrimestral(numeroPosicion12, numeroPosicion11, mes, mesv, cuenta);
                     tempV += "<td>" + numberWithCommas(variacion) + "</td>";
                 }
 
@@ -3467,7 +4110,7 @@ function variacionTrimestral() {
                     mes = fechaMes(data.prueba[i].Column13);
                     mesv = fechaMes(data.prueba[i].Column12);
                     cuenta = data.prueba[i].CodigoCuenta;
-                    variacion = hallarVariacionTrimestral(numeroPosicion13, numeroPosicion12, mes, mesv,cuenta);
+                    variacion = hallarVariacionTrimestral(numeroPosicion13, numeroPosicion12, mes, mesv, cuenta);
                     tempV += "<td>" + numberWithCommas(variacion) + "</td>";
                 }
 
@@ -3478,7 +4121,7 @@ function variacionTrimestral() {
                     mes = fechaMes(data.prueba[i].Column14);
                     mesv = fechaMes(data.prueba[i].Column13);
                     cuenta = data.prueba[i].CodigoCuenta;
-                    variacion = hallarVariacionTrimestral(numeroPosicion14, numeroPosicion13, mes, mesv,cuenta);
+                    variacion = hallarVariacionTrimestral(numeroPosicion14, numeroPosicion13, mes, mesv, cuenta);
                     tempV += "<td>" + numberWithCommas(variacion) + "</td>";
                 }
 
@@ -3489,7 +4132,7 @@ function variacionTrimestral() {
                     mes = fechaMes(data.prueba[i].Column15);
                     mesv = fechaMes(data.prueba[i].Column14);
                     cuenta = data.prueba[i].CodigoCuenta;
-                    variacion = hallarVariacionTrimestral(numeroPosicion15, numeroPosicion14, mes, mesv,cuenta);
+                    variacion = hallarVariacionTrimestral(numeroPosicion15, numeroPosicion14, mes, mesv, cuenta);
                     tempV += "<td>" + numberWithCommas(variacion) + "</td>";
                 }
 
@@ -3500,7 +4143,7 @@ function variacionTrimestral() {
                     mes = fechaMes(data.prueba[i].Column16);
                     mesv = fechaMes(data.prueba[i].Column15);
                     cuenta = data.prueba[i].CodigoCuenta;
-                    variacion = hallarVariacionTrimestral(numeroPosicion16, numeroPosicion15, mes, mesv,cuenta);
+                    variacion = hallarVariacionTrimestral(numeroPosicion16, numeroPosicion15, mes, mesv, cuenta);
                     tempV += "<td>" + numberWithCommas(variacion) + "</td>";
                 }
 
@@ -3511,7 +4154,7 @@ function variacionTrimestral() {
                     mes = fechaMes(data.prueba[i].Column17);
                     mesv = fechaMes(data.prueba[i].Column16);
                     cuenta = data.prueba[i].CodigoCuenta;
-                    variacion = hallarVariacionTrimestral(numeroPosicion17, numeroPosicion16, mes, mesv,cuenta);
+                    variacion = hallarVariacionTrimestral(numeroPosicion17, numeroPosicion16, mes, mesv, cuenta);
                     tempV += "<td>" + numberWithCommas(variacion) + "</td>";
                 }
 
@@ -3522,7 +4165,7 @@ function variacionTrimestral() {
                     mes = fechaMes(data.prueba[i].Column18);
                     mesv = fechaMes(data.prueba[i].Column17);
                     cuenta = data.prueba[i].CodigoCuenta;
-                    variacion = hallarVariacionTrimestral(numeroPosicion18, numeroPosicion17, mes, mesv,cuenta);
+                    variacion = hallarVariacionTrimestral(numeroPosicion18, numeroPosicion17, mes, mesv, cuenta);
                     tempV += "<td>" + numberWithCommas(variacion) + "</td>";
                 }
 
@@ -3533,7 +4176,7 @@ function variacionTrimestral() {
                     mes = fechaMes(data.prueba[i].Column19);
                     mesv = fechaMes(data.prueba[i].Column18);
                     cuenta = data.prueba[i].CodigoCuenta;
-                    variacion = hallarVariacionTrimestral(numeroPosicion19, numeroPosicion18, mes, mesv,cuenta);
+                    variacion = hallarVariacionTrimestral(numeroPosicion19, numeroPosicion18, mes, mesv, cuenta);
                     tempV += "<td>" + numberWithCommas(variacion) + "</td>";
                 }
 
@@ -3544,7 +4187,7 @@ function variacionTrimestral() {
                     mes = fechaMes(data.prueba[i].Column20);
                     mesv = fechaMes(data.prueba[i].Column19);
                     cuenta = data.prueba[i].CodigoCuenta;
-                    variacion = hallarVariacionTrimestral(numeroPosicion20, numeroPosicion19, mes, mesv,cuenta);
+                    variacion = hallarVariacionTrimestral(numeroPosicion20, numeroPosicion19, mes, mesv, cuenta);
                     tempV += "<td>" + numberWithCommas(variacion) + "</td>";
                 }
                 if (data.prueba[i].Column21 != null) {
@@ -3554,7 +4197,7 @@ function variacionTrimestral() {
                     mes = fechaMes(data.prueba[i].Column21);
                     mesv = fechaMes(data.prueba[i].Column20);
                     cuenta = data.prueba[i].CodigoCuenta;
-                    variacion = hallarVariacionTrimestral(numeroPosicion21, numeroPosicion20, mes, mesv,cuenta);
+                    variacion = hallarVariacionTrimestral(numeroPosicion21, numeroPosicion20, mes, mesv, cuenta);
                     tempV += "<td>" + numberWithCommas(variacion) + "</td>";
                 }
                 if (data.prueba[i].Column22 != null) {
@@ -3564,7 +4207,7 @@ function variacionTrimestral() {
                     mes = fechaMes(data.prueba[i].Column22);
                     mesv = fechaMes(data.prueba[i].Column21);
                     cuenta = data.prueba[i].CodigoCuenta;
-                    variacion = hallarVariacionTrimestral(numeroPosicion22, numeroPosicion21, mes, mesv,cuenta);
+                    variacion = hallarVariacionTrimestral(numeroPosicion22, numeroPosicion21, mes, mesv, cuenta);
                     tempV += "<td>" + numberWithCommas(variacion) + "</td>";
                 }
                 if (data.prueba[i].Column23 != null) {
@@ -3574,7 +4217,7 @@ function variacionTrimestral() {
                     mes = fechaMes(data.prueba[i].Column23);
                     mesv = fechaMes(data.prueba[i].Column22);
                     cuenta = data.prueba[i].CodigoCuenta;
-                    variacion = hallarVariacionTrimestral(numeroPosicion23, numeroPosicion22, mes, mesv,cuenta);
+                    variacion = hallarVariacionTrimestral(numeroPosicion23, numeroPosicion22, mes, mesv, cuenta);
                     tempV += "<td>" + numberWithCommas(variacion) + "</td>";
                 }
                 if (data.prueba[i].Column24 != null) {
@@ -3584,7 +4227,7 @@ function variacionTrimestral() {
                     mes = fechaMes(data.prueba[i].Column24);
                     mesv = fechaMes(data.prueba[i].Column23);
                     cuenta = data.prueba[i].CodigoCuenta;
-                    variacion = hallarVariacionTrimestral(numeroPosicion24, numeroPosicion23, mes, mesv,cuenta);
+                    variacion = hallarVariacionTrimestral(numeroPosicion24, numeroPosicion23, mes, mesv, cuenta);
                     tempV += "<td>" + numberWithCommas(variacion) + "</td>";
                 }
                 if (data.prueba[i].Column25 != null) {
@@ -3594,7 +4237,7 @@ function variacionTrimestral() {
                     mes = fechaMes(data.prueba[i].Column25);
                     mesv = fechaMes(data.prueba[i].Column24);
                     cuenta = data.prueba[i].CodigoCuenta;
-                    variacion = hallarVariacionTrimestral(numeroPosicion25, numeroPosicion24, mes, mesv,cuenta);
+                    variacion = hallarVariacionTrimestral(numeroPosicion25, numeroPosicion24, mes, mesv, cuenta);
                     tempV += "<td>" + numberWithCommas(variacion) + "</td>";
                 }
                 if (data.prueba[i].Column26 != null) {
@@ -3604,7 +4247,7 @@ function variacionTrimestral() {
                     mes = fechaMes(data.prueba[i].Column26);
                     mesv = fechaMes(data.prueba[i].Column25);
                     cuenta = data.prueba[i].CodigoCuenta;
-                    variacion = hallarVariacionTrimestral(numeroPosicion26, numeroPosicion25, mes, mesv,cuenta);
+                    variacion = hallarVariacionTrimestral(numeroPosicion26, numeroPosicion25, mes, mesv, cuenta);
                     tempV += "<td>" + numberWithCommas(variacion) + "</td>";
                 }
                 if (data.prueba[i].Column26 != null) {
@@ -3614,7 +4257,7 @@ function variacionTrimestral() {
                     mes = fechaMes(data.prueba[i].Column26);
                     mesv = fechaMes(data.prueba[i].Column25);
                     cuenta = data.prueba[i].CodigoCuenta;
-                    variacion = hallarVariacionTrimestral(numeroPosicion26, numeroPosicion25, mes, mesv,cuenta);
+                    variacion = hallarVariacionTrimestral(numeroPosicion26, numeroPosicion25, mes, mesv, cuenta);
                     tempV += "<td>" + numberWithCommas(variacion) + "</td>";
                 }
                 if (data.prueba[i].Column27 != null) {
@@ -3623,7 +4266,7 @@ function variacionTrimestral() {
                     cuenta = data.prueba[i].CodigoCuenta;
                     mes = fechaMes(data.prueba[i].Column27);
                     mesv = fechaMes(data.prueba[i].Column26);
-                    variacion = hallarVariacionTrimestral(numeroPosicion27, numeroPosicion26, mes, mesv,cuenta);
+                    variacion = hallarVariacionTrimestral(numeroPosicion27, numeroPosicion26, mes, mesv, cuenta);
                     tempV += "<td>" + numberWithCommas(variacion) + "</td>";
                 }
 
@@ -3638,8 +4281,7 @@ function variacionTrimestral() {
         }
     });
 
-   
-   
+
+
 
 }
-

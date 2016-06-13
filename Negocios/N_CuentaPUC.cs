@@ -133,8 +133,7 @@ namespace Negocios
         public string varicionMesAnual(string fechaInicialBusqueda, string fechaFinalBusqueda, int idClientes, int idCentroCosto)
         {
             return objPlanUnicoCuentas.obtenerMesAnual(fechaInicialBusqueda, fechaFinalBusqueda, idClientes, idCentroCosto);
-        }
-      
+        }    
 
         public string FechaArchivosVarianza(string fechaInicialBusqueda, string fechaFinalBusqueda, int idClientes, int idCentroCosto)
         {
